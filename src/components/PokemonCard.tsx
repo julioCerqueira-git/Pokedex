@@ -8,7 +8,7 @@ interface PokemonCardProps {
     onPress: () => void;
 };
 
-export default function PokemonCard ({pokemon, onPress}: PokemonCardProps) {
+const PokemonCard = ({pokemon, onPress}: PokemonCardProps) => {
     return (
         <TouchableOpacity style = {styles.card} onPress={onPress}>
             <Image
@@ -27,24 +27,32 @@ export default function PokemonCard ({pokemon, onPress}: PokemonCardProps) {
 };
 
 const styles = StyleSheet.create({
-    card: {
-
-    },
-
-    image: {
-
-    },
-
-    info: {
-
-    },
-
-    name: {
-
-    },
-
-    types: {
-
-    }
-
+  card: {
+    flexDirection: "row",
+    backgroundColor: "#fff",
+    borderRadius: 10,
+    padding: 12,
+    marginBottom: 10,
+    alignItems: "center",
+    elevation: 2,
+  },
+  image: {
+    width: 80,
+    height: 80,
+    marginRight: 12,
+  },
+  info: {
+    flex: 1,
+  },
+  name: {
+    fontSize: 18,
+    fontWeight: "700",
+    textTransform: "capitalize",
+  },
+  types: {
+    color: "#555",
+    marginTop: 2,
+  },
 });
+
+export default PokemonCard;
